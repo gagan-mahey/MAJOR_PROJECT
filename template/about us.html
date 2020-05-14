@@ -1,0 +1,149 @@
+{%extends "base.html"%}
+{%load static %}
+
+    <title>About us</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+
+    {% block myblock %}
+    <style>
+         #pic1{
+        background-image: url('{% static "images/background 11.png"%}');
+        height: 270px;
+        margin-top: -2%;
+        }
+    
+        .h1{
+        height: 1px;
+        width: 100%;
+        border: 1px solid black;
+      
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" id="pic1">
+                <h1 style="color:black;" class="mt-5 ml-5">ABOUT US</h1>
+                          </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{%static 'images/hand.webp'%}" alt="" style="height: 60px; width: 60px;" class="mt-5 ml-5">
+                <h3 style="color: black;" class="ml-5">PROPERTY BOOKING</h3>
+                <p style="color: black;" class="ml-5">We assure you genuine properties with all the property pages signed by the notary.<br>
+                We will provide you with the most genuine properties.</p>
+                <h6 style="color: black; " class="ml-5">Read More</h6>
+            </div>
+            <div class="col-md-4">
+                <img src="{%static 'images/i2.jpg'%}" alt="" style="height: 60px; width: 60px;" class="mt-5 ml-5">
+                <h3 style="color: black;" class="ml-5">PAYMENT GARAUNTEE</h3>
+                <p style="color: black;" class="ml-5">We assure you genuine property at genuine rates. We provide you different payment modes of payment along with all the property and registry documents.<br>
+                </p>
+                <h6 style="color: black; " class="ml-5">Read More</h6>
+            </div>
+            <div class="col-md-4">
+                <img src="{%static 'images/i3.jpg'%}" alt="" style="height: 60px; width: 60px;" class="mt-5 ml-5">
+                <h3 style="color: black;" class="ml-5">HOME MANAGEMENT</h3>
+                <p style="color: black;" class="ml-5">We assure you genuine property at genuine rates. We provide you different payment modes of payment along with all the property and registry documents.<br>
+                </p>
+                <h6 style="color: black; " class="ml-5">Read More</h6>
+            </div>
+        </div>
+    </div>
+    <div class="h1"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 style="color: black;" class="mt-5 ml-5">Who are we?</h2>
+                <p style="color: black;" class="ml-5">Evernest is an online rental house website.We provide<br> you with the most genuine and latest properties with all <br>the verified and genuine documents. You can trust evernest<br> with no second thoughts for most <br> genuine properties.</p>
+                <ul style="color: black; " class="ml-5">
+                    <li>We are trying to find our dream house.</li>
+                    <li>Our goal is to perfect match for your dream house</li>
+                    <li>Evernest provides you with best and genuine proprties</li>
+                    <li>We will provide you properties at genuine rates </li>
+                    <li>We will provide you with all the documents and genuine properties.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="{%static 'images/houseabout.jpg'%}" alt="" style="height:400px; width: 450px;" >
+            </div>
+        </div>
+    </div>
+    <div class="h1"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 style="color: yellowgreen;">WHAT WE DO</h1>
+                <p style="color: black;">The comprehensive real estate report carries trends in real estate in rental as well as buy/sell space. It is representative of the humongous data that NoBroker receives year on year from its database of 7.5 million as well as a survey it conducted across cities with over 14000 participants.
+
+                    It carries key trends that run across cities plus trends specific to property renting, buying, & selling in each city.
+                    
+                    Top insights from the report are mentioned below –
+                    
+                    64% of tenants are looking to purchase a property in 2020
+                    85% consumers prefer ready-to-move in properties
+                    71% consumers are looking to buy a house within the budget of INR 60 lakhs
+                    Home-loan rate cuts have ushered in positive sentiment among potential buyers
+                    73% consumers check Vastu before buying a property</p>
+               
+                <h4 style="color: black; background:yellowgreen;">We provide you properties with easy installment.</h4>
+                <p style="color: black;">Evernest is an online platform where real estate trade is taking place in a much faster and newer manner. We not just help you with finding the ideal real estate, but also ensure that your buying journey is as smooth as it can be. We understand that while buying or renting a property, there are a lot of factors to be taken into consideration, like the locality, preferred area, budget, amenities, and a lot more. Evernest is the destination where you will end up finding the best suitable property available across India. </p>            
+            </div>
+            <div class="col-md-6">
+                <h1 style="color: yellowgreen;" class="ml-5">OUR MISSION</h1>
+                <p style="color: black;" class="ml-5">Evernest aims at providing you with best properties which are genuine and are available to you at easy installments. Evernest provides you rental houses or apartments according your requirements. We aim at providing housing at your ease and availablity with least installments. You can find latest and newest properties iat evernest at most genuine prices with all verified documents.</p>
+                <div>
+                    <img src="{%static 'images/i4.png'%}" alt="" style="height: 60px; width: 60px;" class="ml-5">
+                    <h5 style="color: yellowgreen; display: inline-block;" class="ml-3" >Find Proper Area For Housing</h5>
+                </div>
+                <div>
+                    <img src="{%static 'images/i5.png'%}" alt="" style="height: 60px; width: 60px;" class="ml-5 mt-2">
+                    <h5 style="color: yellowgreen; display: inline-block;" class="ml-3" >Easy installment value paid facility</h5>
+                </div>
+                <div>
+                    <img src="{%static 'images/i6.png'%}" alt="" style="height: 60px; width: 60px;" class="ml-5 mt-2">
+                    <h5 style="color: yellowgreen; display: inline-block;" class="ml-3" >Money Back Garauntee</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h1"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="color: black;" class="mt-5 ml-5">OUR AGENTS</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'images/agent1.jpg'%}" alt="" style="height:200px;width: 200px;" class="mt-5">
+                <h6 style="color: black; text-align: center;">Martin Luthra</h6>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'images/agent2.jpg'%}" alt="" style="height:200px;width: 200px;" class="mt-5">
+                <h6 style="color: black; text-align: center;">Jay Samuel</h6>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'images/agent3.jpg'%}" alt="" style="height:200px;width: 200px;" class="mt-5">
+                <h6 style="color: black; text-align: center;">Christine </h6>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'images/agent4.jpeg'%}" alt="" style="height:200px;width: 200px;" class="mt-5">
+                <h6 style="color: black; text-align: center;">Mary James</h6>
+            </div>
+        </div>
+    </div>
+    <div class="h1"></div>
+    <div style="background: yellowgreen;" class="mt-5">
+        <h3 style="color: black;" class="ml-5">ARE YOU LOOKING FOR A HOUSE OR CUSTOMER FOR YOUR PROPERTY SALE?</h3>
+        <h6 style="color: black;" class="ml-5">Please click the button to register, we will become your best agent and help you for both. <button style="background:white; color: black; float:right;" class="mr-5 mb-5"  >REGISTER NOW</button></h6>
+     </div>
+    <div class="h1"></div>
+
+    {% endblock %}
+</body>
+</html>

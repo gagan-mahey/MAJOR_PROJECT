@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block myblock %}
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-md-6 mx-auto shadow shadow-lg my-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Are you sure you want to Delete?</h3>
+                    <div>
+                        <img src="/media/{{property.property_image}}" height="200px" width="80%" class="text-center">
+                        <h5>{{property.property_name}}</h5>
+                    </div>
+                    <div>
+                        <a href="{% url 'delete_property' %}?pid={{property.id}}&&action=confirm" class="btn btn-danger">confrim Delete</a>
+                        <a href="{% url 'myproperty' %}" class="btn btn-warning">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if status %}
+<script>
+    alert("{{status}}")
+    window.location = "/myproperty"
+</script>
+{% endif %}
+
+{% endblock %}

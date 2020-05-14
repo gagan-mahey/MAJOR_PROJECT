@@ -1,0 +1,71 @@
+{% extends "base.html"%}
+{%load static %}
+{% block myblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="jquery.js"></script>
+    <script src="js/bootstrap.css"></script>
+    <style>
+      #pic1{
+          background: url('https://pluspng.com/img-png/houses-png-hd-awesome-houses-design-images-images-of-houses-design-with-ideas-hd-home-mariapngt-1435.png');
+          height: 280px;
+      }
+      .body{
+        background: black;
+      }
+      .h1{
+        height: 1px;
+        width: 100%;
+        border: 1px solid white;
+      }
+</style>
+</head>
+<body class="body">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" id="pic1">
+                <h1 style="color:black;" class="text-center">PROPERTY DETAILS</h1>
+            </div>
+        </div>
+    </div>
+           
+    
+    <div class="container">
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="https://www.itl.cat/pngfile/big/88-888377_house-wallpaper-download-beautiful-house-images-hd.jpg" alt="" style="height:200px; width:250px;">
+          
+        </div>
+        <div class="col-md-8">
+           <h4 style="color: white;">Birla properties</h4>
+           <h5 style="color: white;">&#8377 50,000pm</h5>
+           <h5 style="color: white;">Address: Shivalik City,kharar-landran road,Punjab</h5>
+           <p style="color: white;">A beautiful house with 3 bedrooms and attached washroom
+            A dinning hall with open and modular kitchen is provided.
+             There is market nearby with many other facilities like gym, grocery shops, etc.
+            Maintainance is included in the rent monthly. There is no brokerage and no interference of owner.
+            </p>
+            <h5 style="color: white;">Bachelors allowed, Family allowed</h5>
+            <h6 style="color: white;">(Updated 5 hours ago)</h6>
+            <button class="btn btn-warning">Next Page</button>
+            <button class="btn btn-success">CONTACT THE AGENT</button>
+         
+            
+        </div>
+      </div>
+    </div>
+    
+          
+
+    </div>
+  
+</body>
+</html>
+{% endblock %}
+

@@ -1,0 +1,226 @@
+{% extends "base.html"%}
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+<script src="https://kit.fontawesome.com/f7a6829b89.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/f7a6829b89.js" crossorigin="anonymous"></script> -->
+    {% block head %}
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body,html{
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            width:100% ;
+        }
+        .bg{
+        background-image: url('{% static "images/homeone.jpg"%}');
+        background-attachment: fixed;
+        width: 100%;
+        height:250px;
+        margin-top: -4%;
+    }
+      
+        .col1{
+            height: 300px;
+        }
+    .col1 a{
+        color:white;
+        font-size: 30px;
+        font: bold;
+        border: 2px solid white;
+    }
+    .col1 h1{
+        margin-top: 8%!important;
+    }
+    
+   /*section2*/
+   .div1,.div2{
+       height: 130px;
+   }
+   .div1 p{
+       display: none;
+   }
+   .img{
+       margin-top: -24%!important;
+       border: 4px solid gray;
+       height: 170px;
+   }
+.div2,.col2
+{
+    background: white;
+}
+.form1 h3{
+    text-decoration: underline double black;
+}
+.form1 input{
+    width: 170%!important;
+    background: lightgray;
+}
+.group1,.group2{
+    margin-top: 4%;
+    display: inline-block;
+}
+.text_area{
+    background: lightgray;
+}
+.group2{
+    margin-left: 20%;
+}
+/*Section3*/
+.col4{
+    background: white;
+    margin-top: -30%!important;
+    line-height: 55px!important;
+   
+}
+.col4 h2{
+    text-decoration: underline double black ;
+}
+.col4 a{
+color: black!important;
+}
+
+/*for responsiveness*/
+@media (min-width:320px) and (max-width:1199px){
+    .form1 input{
+        width:140%!important;
+    }
+    
+}
+@media (min-width:320px) and (max-width:991px){
+    .group2{
+        margin-left: 11%;
+    }
+    .group1{
+        margin-left: 11%;
+    }
+    .col4{
+        margin-top: -85%!important;
+    }
+}
+@media (min-width:320px) and (max-width:767px){
+    .col2{
+        margin-top: 5%!important;
+    }
+    .col4{
+        margin-top: 5%!important;
+    }
+}
+@media (min-width:320px) and (max-width:365px){
+   .form1 input{
+        width:120%!important;
+    }
+}
+</style>
+{% endblock %}
+</head>
+{% block myblock %}
+<body class="bg-light">
+    <!--Section1-->
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-12 bg text-center text-white col1">
+             <h1>Edit Profile</h1>
+             <a href="">Dashboard ></a>
+             <a href=""> Edit Profile</a>
+            </div>
+        </div>
+   <!--Section2-->
+    <div class="container">
+        <div class="row mt-5 pt-3 pb-3">
+            <div class="col-md-4">
+            <div class="div1 bg-primary text-center">
+                <p>h</p>
+           </div>
+           <div class="div2 text-center">
+                <img src="/media/{{data.profile_image}}" class="img">
+           </div>
+            </div>
+
+            <div class="col-md-8 col-lg-8  col2">
+                <form class="form1" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h3 class="mt-3">Personal Information</h3>
+                    {% if status %}
+                        <div class="alert alert-primary">{{status}}</div>
+                    {% endif %}
+                    <div class="form-group group1" >
+                        <label for="" class="label1">First Name</label>
+                    <input type="text" value="{{user.first_name}}" class="form-control input1" name="fname">
+                    </div>
+                    <div class="form-group  group2" >
+                    <label for="" class="label2">Last name</label>
+                <input type="text" class="form-control input2" name="lname" value="{{user.last_name}}">
+            </div>
+
+            <div class="form-group  group1" >
+                <label for="" class="label1">Title</label>
+            <input type="text" class="form-control input1" name="title" value="{{data.title}}">
+            </div>
+            <div class="form-group  group2" >
+            <label for="" class="label3">Contact number</label>
+        <input type="number" class="form-control input2" name="phno" value="{{data.contact_number}}">
+    </div>
+     
+    
+    <div class="form-group  group1">
+    <label for="" class="label2">Email address</label>
+<input type="email"  class="form-control input3" name="email" value="{{user.email}}">
+</div>
+<div class="form-group  group2" >
+    <label for="" class="label2">Profile Image</label>
+<input type="file" class="form-control input4" name="images">
+</div>
+<div class="form-group mt-3">
+    <label>About You</label>
+    <textarea class="form-control text_area" name="about" cols="40" rows="3">{{data.about}}</textarea>
+</div>
+
+<button class="btn btn-primary text-white mt-3 mb-3">Save Changes</button>
+                </form>
+            </div>
+ <!--Section3-->
+<div class="col-md-3 col-lg-3  col4 mt-3 ml-3">
+<h2>Manage Account</h2>
+
+    <li>
+       <a href="{% url 'dashboard' %}"><i class="fa fa-user"></i> My Profile</a>
+    </li>
+    {% if user.is_staff %}
+    <li>
+       <a href="{% url 'favourite' %}"><i class="fa fa-heart"></i> Favourite Properties</a>
+    </li>
+    <li>
+       <a href="{% url 'addproperty' %}"><i class="fa fa-plus"></i> Submit New Property</a>
+    </li>
+    <li>
+       <a href="{% url 'myproperty' %}"><i class="fa fa-file-archive"></i>My properties</a>
+    </li>
+    {% endif %}
+    <li>
+        <a href="{% url 'editprofile' %}">Edit profile</a>
+    </li>
+    <li>
+       <a href="{% url 'changepassword' %}"><i class="fa fa-lock"></i> Change Password</a>
+    </li>
+    <li>
+       <a href="{% url 'user_logout' %}"><i class="fa fa-power-off"></i> Log out</a>
+    </li>
+</div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,230 @@
+{% extends "base.html"%}
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+<script src="https://kit.fontawesome.com/f7a6829b89.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/f7a6829b89.js" crossorigin="anonymous"></script> -->
+    {% block head %}
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body,html{
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            width:100% ;
+        }
+        .bg{
+        background-image: url('{% static "images/homeone.jpg"%}');
+        background-attachment: fixed;
+        width: 100%;
+        height:250px;
+        margin-top: -4%;
+    }
+      
+        .col1{
+            height: 300px;
+        }
+    .col1 a{
+        color:white;
+        font-size: 30px;
+        font: bold;
+        border: 2px solid white;
+    }
+    .col1 h1{
+        margin-top: 8%!important;
+    }
+    
+   /*section2*/
+   .div1,.div2{
+       height: 130px;
+   }
+   .div1 p{
+       display: none;
+   }
+   .img{
+       margin-top: -24%!important;
+       border: 4px solid gray;
+       height: 170px;
+   }
+.div2,.col2
+{
+    background: white;
+}
+.form1 h3{
+    text-decoration: underline double black;
+}
+.form1 input{
+    width: 170%!important;
+    background: lightgray;
+}
+.group1,.group2{
+    margin-top: 4%;
+    display: inline-block;
+}
+.text_area{
+    background: lightgray;
+}
+.group2{
+    margin-left: 20%;
+}
+/*Section3*/
+.col4{
+    background: white;
+    margin-top: -30%!important;
+    line-height: 55px!important;
+   
+}
+.col4 h2{
+    text-decoration: underline double black ;
+}
+.col4 a{
+color: black!important;
+}
+
+/*for responsiveness*/
+@media (min-width:320px) and (max-width:1199px){
+    .form1 input{
+        width:140%!important;
+    }
+    
+}
+@media (min-width:320px) and (max-width:991px){
+    .group2{
+        margin-left: 11%;
+    }
+    .group1{
+        margin-left: 11%;
+    }
+    .col4{
+        margin-top: -85%!important;
+    }
+}
+@media (min-width:320px) and (max-width:767px){
+    .col2{
+        margin-top: 5%!important;
+    }
+    .col4{
+        margin-top: 5%!important;
+    }
+}
+@media (min-width:320px) and (max-width:365px){
+   .form1 input{
+        width:120%!important;
+    }
+}
+</style>
+{% endblock %}
+</head>
+{% block myblock %}
+<body class="bg-light">
+    <!--Section1-->
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-12 bg text-center text-white col1">
+             <h1>My Profile</h1>
+             <a href="">Home ></a>
+             <a href=""> My Profile</a>
+            </div>
+        </div>
+   <!--Section2-->
+    <div class="container">
+        <div class="row mt-5 pt-3 pb-3">
+            <div class="col-md-4">
+            <div class="div1 bg-primary text-center">
+                <p>h</p>
+           </div>
+           <div class="div2 text-center">
+                <img src="/media/{{data.profile_image}}" class="img">
+           </div>
+           <div class="bg-light my-4">
+           <h2>Manage Account</h2>
+
+    <li>
+       <a href="{% url 'dashboard' %}"><i class="fa fa-user"></i> My Profile</a>
+    </li>
+    {% if user.is_staff %}
+    <li>
+       <a href="{% url 'favourite' %}"><i class="fa fa-heart"></i> Favourite Properties</a>
+    </li>
+    <li>
+       <a href="{% url 'addproperty' %}"><i class="fa fa-plus"></i> Submit New Property</a>
+    </li>
+    <li>
+       <a href="{% url 'myproperty' %}"><i class="fa fa-file-archive"></i>My properties</a>
+    </li>
+    {% endif %}
+    <li>
+        <a href="{% url 'editprofile' %}">Edit profile</a>
+    </li>
+    <li>
+       <a href="{% url 'changepassword' %}"><i class="fa fa-lock"></i> Change Password</a>
+    </li>
+    <li>
+       <a href="{% url 'user_logout' %}"><i class="fa fa-power-off"></i> Log out</a>
+    </li>
+            </div>
+
+            
+ 
+        </div>
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h1>My Details</h1>
+                </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped table-hover">
+                    <tbody>
+                        <tr>
+                            <th>User ID :</th>
+                            <td>{{user.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>Username:</th>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <th>Full name:</th>
+                            <td>{{user.first_name}} {{user.last_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Email address: </th>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <th>Contact number</th>
+                            <td>{{data.contact_number}}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{data.title}}</td>
+                        </tr>
+                        <tr>
+                            <th>Last login:</th>
+                            <td>{{user.last_login}}</td>
+                        </tr>
+                        <tr>
+                            <th>Date Joined:</th>
+                            <td>{{user.date_joined}}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

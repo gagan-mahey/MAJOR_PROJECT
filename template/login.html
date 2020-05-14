@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+{% load static %}
+{% block myblock %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+<style>
+
+.contact-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+    }
+    .contact-section .login-box {
+    background: #fff;
+    max-width: 950px;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.contact-section .pad-0 {
+    padding: 0;
+}
+.align-self-center {
+    -ms-flex-item-align: center!important;
+    align-self: center!important;
+}
+@media (min-width: 992px){
+.col-lg-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}}
+.contact-section .form-section {
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px 0 0 10px;
+}
+ ::after, ::before {
+    box-sizing: border-box;
+}
+.contact-section .btn-section {
+    border-radius: 50px;
+    margin-bottom: 25px;
+    display: inline-block;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.contact-section .btn-section .link-btn {
+    font-size: 15px;
+    float: left;
+    background: transparent;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    text-decoration: blink;
+    line-height: 30px;
+    width: 90px;
+    color: #505050;
+}
+.contact-section .btn-section .btn-1 {
+    border-radius: 50px 0 0 50px;
+    border-right: solid 2px #e6e6e6;
+}
+.contact-section .btn-section .active-bg {
+    color: #fff;
+    background: #333;
+}
+.contact-section .btn-section .btn-2 {
+    border-radius: 0 50px 50px 0;
+}
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+.contact-section .form-section .form-box {
+    float: left;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+.contact-section .form-section .form-group {
+    margin-bottom: 25px;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.contact-section .form-section .form-box input {
+    float: left;
+    width: 100%;
+}
+.contact-section .form-section .input-text {
+    padding: 10px 20px;
+    font-size: 15px;
+    outline: none;
+    height: 50px;
+    background: rgba(23, 23, 23, 0.72);
+    color: #616161;
+    border-radius: 50px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+.contact-section .form-section .btn-theme {
+    background: #333;
+}
+.contact-section .form-section .btn-theme {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    color: #fff;
+}
+.contact-section .form-section .btn-md {
+    cursor: pointer;
+    padding: 15px 50px 13px 50px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 50px;
+}
+.btn-theme {
+    background: #333;
+    border: solid 1px #333;
+}
+.btn-theme {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+}
+.btn-md {
+    cursor: pointer;
+    padding: 13px 30px 11px 30px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 3px;
+     /* color: #fff; */
+    transition: .5s;
+    border: none;
+}
+
+.btn-theme {
+    
+    padding: 7px 20px;
+}
+.contact-section .form-section .btn-theme:hover {
+    color:#333;
+    background: #fff;
+    border: 1px solid black;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
+    font-size: larger;
+
+}
+
+.float-left {
+    float: left!important;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+.contact-section .form-section a.forgot-password {
+    font-size: 15px;
+    color: #535353;
+    float: right;
+    line-height: 50px;
+    font-weight: 500;
+}
+.contact-section .bg-img {
+    background: rgba(0, 0, 0, 0.04)  url(reg.jpg) top left repeat;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 20px 20px 0;
+    opacity: 1;
+    width: 100%;
+    /* z-index: 999; */
+    min-height: 496px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.align-self-center {
+    -ms-flex-item-align: center!important;
+    align-self: center!important;
+}
+.contact-section .logo-2 img {
+    margin-bottom: 10px;
+    height: 45px;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+@media (min-width: 992px){
+.col-lg-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.contact-section .info {
+    padding: 30px;
+    text-align: center;
+    border: solid 5px #ffffff;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto;
+}
+a {
+    color: #353535;
+}
+a {
+    cursor: pointer;
+    color: #353535;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.contact-section .social-list a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+    margin: 2px;
+    border-radius: 5%;
+    background: #fff;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+.contact-section .facebook-bg {
+    color: #4867aa;
+}
+.facebook-bg {
+    background: #4867aa;
+    color: #fff;
+}
+.contact-section .twitter-bg {
+    color: #33CCFF;
+}
+.twitter-bg {
+    background: #33CCFF;
+    color: #fff;
+}
+.contact-section .google-bg {
+    color: #db4437;
+}
+.google-bg {
+    background: #db4437;
+    color: #fff;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+i {
+    font-style: italic;
+}
+.contact-section .linkedin-bg {
+    color: #2392e0;
+}
+
+.background{
+    background: url(reg.jpg);
+}
+.contact-section .facebook-bg:hover {
+    background: #4867aa;
+}
+.contact-section .twitter-bg:hover {
+    background: #33CCFF;
+}
+.contact-section .google-bg:hover {
+    background: #db4437;
+}
+.contact-section .social-list a:hover {
+    color: #fff;
+}
+ .contact-section .linkedin-bg {
+    background: #2392e0;
+} 
+.linkedin-bg {
+     background: #0177b5; 
+    color: #fff;
+}
+.contact-section .linkedin-bg:hover{
+    background: #2392e0;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 2;
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+</style>
+
+<div class="contact-section">
+    <div class="container">
+        <div class="row login-box">
+            <div class="col-lg-6 align-self-center pad-0">
+                <div class="form-section align-self-center">
+                    <h3>Sign into your account</h3>
+                    <div class="btn-section clearfix">
+                        <a href="{% url 'user_login' %}" class="link-btn active btn-1 active-bg">Login</a>
+                        <a href="{% url 'register' %}" class="link-btn btn-2 default-bg">Register</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group form-box">
+                            <input type="text" name="username" class="input-text" placeholder="Username">
+                        </div>
+                        <div class="form-group form-box clearfix">
+                            <input type="password" name="password" class="input-text" placeholder="Password">
+                        </div>
+                        <div class="form-group clearfix mb-0">
+                            <button type="submit" class="btn-md btn-theme float-left">Login</button>
+                            <a href="{% url 'forget_pass' %}" class="forgot-password">Forgot Password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 bg-color-15 align-self-center pad-0 none-992 bg-img" style="background: url('/static/images/reg.jpg')">
+                <div class="info clearfix">
+                    <!-- <div class="logo-2">
+                        <a href="index.html">
+                            <img src="img/logos/logo.png" alt="logo">
+                        </a>
+                    </div> -->
+                    <h3 class="text-light">Welcome to Evernest</h3>
+                    <div class="social-list">
+                        <a href="#" class="facebook-bg">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="twitter-bg">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="google-bg">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="linkedin-bg">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

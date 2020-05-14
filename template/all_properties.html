@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block myblock %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="background: url('/static/images/background7.jpg'); height: 160px; width: 100%; background-size: 100% 100%;">
+            {% if abcd %}
+                <h1 style="color: white; text-align: center; margin-top: 40px;color:white;">TOTAL ({{properties|length}}) PROPERTIES FOUND</h1>
+            {% else %}
+                <h1 style="color: white; text-align: center; margin-top: 40px;color:white;">ALL PROPERTIES ({{properties|length}})</h1>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        {% for i in properties %}
+        <div class="col-md-4 p-4">
+            <div class="card">
+                <div class="card-header">
+                    Property
+                </div>
+                <div class="card-body">
+                    <img src="/media/{{i.property_image}}" style="height: 200px; width: 100%;">
+                    <a href="{% url 'single_property' %}?pid={{i.id}}">{{i.property_name}}</a>
+                    <h6>Market price: <del>&#8377;{{i.property_price}}</del></h6>
+                    <h6>Sale Price: {{i.sale_price}}</h6>
+                    <p>{{i.details}}</p>
+                    <strong>{{i.property_category.cat_name}}</strong>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

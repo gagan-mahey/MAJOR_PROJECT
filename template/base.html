@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    {% block head %}
+    <style>
+
+    </style>
+    {% endblock %}
+</head>
+<body>
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="navbar navbar-expand-sm navbar-dark  fixed-top text-uppercase" style="background: black;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="" class="navbar-brand">
+                                <img src="{% static 'images/sam1.png'%}" class="imgback" width="80%">
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                            <button class="navbar-toggler" data-target="#navb" data-toggle="collapse">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                
+                            <div class="collapse navbar-collapse" id="#navb">
+                                <ul class="mx-auto navbar-nav">
+                                    <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                                    <li class="nav-item">
+                                        <a href="{% url 'about'%}" class="nav-link">ABOUT US</a>
+                                        
+                                    </li>
+                                    <li class="nav-item"><a href="{% url 'contact'%}" class="nav-link">Contact Us</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a href="{% url 'all_properties' %}" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{% url 'category'%}" class="dropdown-item">Category</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item"><a href="{% url 'all_properties' %}" class="nav-link">All Properties</a></li>
+                                    <li class="nav-item"><a href="{% url 'propertydetail' %}" class="nav-link">PROPERTY DETAILS</a></li>
+                                    
+                                   
+                              
+                                <ul class="navbar-nav ml-auto">
+                                    <!-- <li class="nav-item"><form class="form-inline">
+                                        <div class="form-group form1">
+                                            <i class="fas fa-search icon1" style="color: white;" aria-hidden="true"></i>
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                    </form></li>-->
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item">
+                                        <a href="{% url 'dashboard' %}" class="nav-link">Welcome, {{user.username}}</a>
+                                    </li>
+                                    {% else %}
+                                        <li class="nav-item"><a href="{% url 'user_login' %}" class="btn bg-light text-dark ml-3 button1"  >Login</a></li>
+                                        <li class="nav-item"><a class="btn bg-light text-dark ml-2 button1"  href="{% url 'register' %}">Sign Up</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </nav>
+       
+    </div>
+</div>
+    
+</div>
+        </div>  
+        
+        
+        {% block myblock %}
+
+
+        {% endblock %}
+        <!--footer--> 
+
+    <footer class="footer container-fluid text-white">
+        <div class="upper-footer">
+            <div class="row">
+                
+                <div class="col-md-3 mx-auto mt-4">
+                    <p class="font-weight-bold">EVRENEST</p>
+                    <p><a>HOME</a></p>
+                    <p><a>ABOUT US</a></p>
+                    <p><a>CONTACT US</a></p>
+                    <p><a>ALL PROPERTIES</a></p>
+                    <p><a>PROPERTY DETAILS</a></p>
+                   
+                </div>
+                <div class="col-md-3 mt-4">
+                    <p class="font-weight-bold">CONTACT US</p>
+                    <p><span class="font-weight-bold">Address :</span> Hath of it fly signs bear be one blessed after</p>
+                    <p><a>Help center</a></p>
+                    <p><a>Visit property</a></p>
+
+                    <p><a><span class="font-weight-bold">Phone : </span> 8753739203</a></p>
+                    <p><a><span class="font-weight-bold">Email : </span>evernest@yahoo.com </a></p>
+                </div>
+                <div class="col-md-3 mx-auto mt-4">
+                    <p>If we wait until we are ready , we will be waiting for the rest of our lives.</p>
+                    <img src="{% static 'images/house management2.jpg'%}" alt="" class="img-fluid d-block imgb mb-2 rounded-circle ml-3">
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="icons">
+            <div class="row">
+                <div class="col-md-6 list mx-auto">
+                    <ul>
+                        <li>Terms of use</li>
+                        <li class="ml-5">Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="lower-footer text-center">
+            <img src="{%static 'images/homelogo.jpg'%}" class="imgf">
+            Copyright @Evernest  All rights reserved
+        </div>
+    </footer>
+</div>
+
+
+    
+
+</body>
+</html>

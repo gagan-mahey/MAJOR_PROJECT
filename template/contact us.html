@@ -1,0 +1,722 @@
+{%extends "base.html"%}
+
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactpage</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'contact_us.css'%}">
+</head>
+<body>
+   {% block head %}
+    <style>
+        .col1{
+    background-image: url('{% static "images/backgroundcontact.jpg"%}');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    /* background-color: gray; */
+    background-blend-mode: color;
+    height: 600px;
+    width: 100%;
+    position: relative;
+    margin-top: -4%;
+}
+
+*{
+    margin:0;
+    padding:0;
+    
+}
+body,html{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    width:100%;
+}
+.img{
+    height: 70px;
+    width: 35%;
+}
+.form-inline input{
+    border-radius: 40px;
+}
+.collapse ul li a:hover{
+    background: rgb(156, 153, 153);
+    color: white!important;
+    border-radius: 40px;
+    
+}
+/*section1*/
+
+.txt{
+   margin-top: 16%!important;
+   font-size: 50px!important;
+}
+.bttn{
+    margin-left: 44%;
+    margin-top: 1%;
+    border-radius:40px;
+}
+.bttn:hover{
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+/*section2*/
+.card1{
+    position: absolute;
+    top: 70%;
+}
+.card2{
+    position: absolute;
+    top: 70%;
+    left: 57%;
+}
+@media (min-width:600px) and (max-width:767px){
+    .card1{
+        position: absolute;
+        top: 65%;
+        left:0%;
+    }
+    .card2{
+        position: absolute;
+        top: 170%;
+        left:0%;
+    }
+    .con1{
+        margin-top: 145%!important;
+    }
+   .image1{
+       margin-top: -10%!important;
+       height: 100px;
+   }
+   .row3{
+       margin-top: 5%!important;
+       margin-bottom: 5%!important;
+       margin-right: 4%!important;
+   }
+   .colif{
+   margin-top: 3%!important;
+   }
+}
+@media (min-width:500px) and (max-width:600px){
+    .card1{
+        position: absolute;
+        top: 68%;
+        left:0%;
+    }
+    .card2{
+        position: absolute;
+        top: 155%;
+        left:0%;
+    }
+    .con1{
+        margin-top: 140%!important;
+    }
+   .image1{
+       margin-top: -10%!important;
+   }
+   .row3{
+    margin-top: 5%!important;
+    margin-bottom: 5%!important;
+    margin-right: 4%!important;
+}
+.colif{
+margin-top: 3%!important;
+}
+}
+@media (min-width:400px) and (max-width:500px){
+    .card1{
+        position: absolute;
+        top: 60%;
+        left:0%;
+    }
+    .card2{
+        position: absolute;
+        top: 133%;
+        left:0%;
+    }
+    .con1{
+        margin-top: 127%!important;
+    }
+   .image1{
+       margin-top: -12%!important;
+       width: 90px!important;
+       height: 90px!important;
+       border-radius: 50%!important;
+   }
+   .row3{
+    margin-top: 5%!important;
+    margin-bottom: 5%!important;
+    margin-right: 4%!important;
+}
+.colif{
+margin-top: 3%!important;
+}
+}
+
+
+
+@media (min-width:300px) and (max-width:400px){
+    .card1{
+        position: absolute;
+        top: 65%;
+        left:0%;
+    }
+    .card2{
+        position: absolute;
+        top: 134%;
+        left:0%;
+    }
+    .con1{
+        margin-top: 135%!important;
+    }
+   .image1{
+       margin-top: -13%!important;
+       width: 80px!important;
+       height: 80px!important;
+       border-radius: 50%!important;
+   }
+   .row3{
+    margin-top: 5%!important;
+    margin-bottom: 5%!important;
+    margin-right: 4%!important;
+}
+.colif{
+margin-top: 3%!important;
+}
+}
+@media (min-width:300px) and (max-width:365px){
+    .con1{
+        margin-top: 152%!important;
+    }
+   .image1{
+       margin-top: -13%!important;
+       width: 80px!important;
+       height: 80px!important;
+       border-radius: 50%!important;
+   }
+}
+
+.row1 .card {
+    position: relative;
+}
+
+.row1 .layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    opacity: 0.6;
+    transition: .5s ease;
+    background: black;
+}
+
+.row1 .layer .txt,
+.row1 .layer2 .txt {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row1 .layer2 {
+    position: absolute;
+    bottom: 26%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    height: 0;
+    opacity: 0.6;
+    transition: .5s ease;
+}
+
+.row1 .card:hover .layer {
+    height: 74%!important;
+}
+
+.row1 .card:hover .layer2 {
+    height: 74%!important;
+}
+
+.row1 .card:hover .layer .txt,
+.row1 .card:hover .layer2 .txt {
+    display: inline-block;
+    width:100%;
+    margin-top: -3%!important;
+    font-size: 30px!important;
+    color:white;
+}
+
+
+/*section3*/
+.row2{
+    margin-top: 21%!important;
+    background-image: url('{% static "images/background10.jpg"%}');
+}
+.col3{
+    border: 4px solid black;
+    margin-top: 6%!important;
+    margin-bottom: 6%;
+}
+.image1{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -17%;
+    margin-left: 35%;
+}
+.button1:hover{
+    background: transparent;
+    color:black!important;
+}
+/*section4*/
+.row3{
+    margin-top: 3%;
+}
+.txt1{
+    text-decoration: underline solid black;
+}
+
+.help{
+    border: 3px solid black;
+}
+
+.help1{
+    border: 3px solid black;
+}
+
+.row3 .help:hover{
+    background-color: black;
+    color: white;
+}
+
+.row3 .help1:hover{
+    background-color: black;
+    color:white;
+}
+
+/* Footer */
+
+.footer {
+    background: black;
+}
+
+.footer .icons ul li {
+    display: inline;
+}
+
+.footer .icons i {
+    float: right;
+    font-size: 40px;
+    margin-right: 25px;
+}
+.imgb{
+    height:200px;
+}
+
+.lower-footer {
+    text-align: center;
+}
+
+hr{
+    background-color: white;
+}
+.imgf{
+    height: 50px;
+}
+
+@media (min-width:768px) and (max-width:1300px){
+    .card1{
+        position: absolute;
+        top: 68%;
+        left:0%;
+    }
+    .card2{
+        position: absolute;
+        top: 71%;
+        left:66%;
+    }
+}
+@media (min-width:768px) and (max-width:950px){
+    .image1{
+        margin-top: -21%!important;
+        margin-left: 25%;
+    }
+}
+@media (min-width:988px) and (max-width:1100px){
+    
+    
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 64%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 70%!important;
+    }
+}
+@media(min-width:837px) and (max-width:988px){
+   
+    
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 34%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 60%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 67%!important;
+    }
+}
+@media(min-width:767px) and (max-width:838px){
+    
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 42%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 52%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 58%!important;
+    }
+}
+
+@media(min-width:612px) and (max-width:766px){
+   
+    
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 14%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 83%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 83%!important;
+    }
+}
+
+
+@media(min-width:465px) and (max-width:611px){
+    
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 79%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 80%!important;
+    }
+}
+@media(min-width:415px) and (max-width:464px){
+   
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 26%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 74%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 74%!important;
+    }
+}
+@media(min-width:320px) and (max-width:414px){
+   
+    .row1 .layer2 {
+        position: absolute;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        height: 0;
+        opacity: 0.6;
+        transition: .5s ease;
+    }
+    
+    .row1 .card:hover .layer {
+        height: 64%!important;
+    }
+    
+    .row1 .card:hover .layer2 {
+        height: 68%!important;
+    }
+}
+@media (min-width:400px) and (max-width:820px){
+    .txt{
+    margin-top:30%!important;}
+    .bttn{
+        margin-left: 40%;
+    }
+}
+@media (min-width:320px) and (max-width:400px){
+    .txt{
+        font-size:35px!important;
+        margin-top: 47%!important;
+    }
+    .bttn{
+        margin-left: 32%;
+    }
+}
+    </style>
+    
+    {% endblock %}
+   {% block myblock %}
+    <!--section1-->
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-12 col1">
+            <h2 class="mt-5 text-center text-white txt" style="margin-top: 10%; font: bold; color: whitesmoke;">CONTACT US</h2>
+        
+        </div>
+    </div>
+    <!--section2-->
+    <div class="container row1">
+    <div class="row ">
+        <div class="col-md-4 col-lg-4 card1">
+            <div class="card ">
+                <img src="{% static 'images/homecontact.jpg'%}" alt=" " class="card-img-top">
+                <div class="layer ">
+                    <p class="text-center txt">YOU WILL FIND GOOD FACILITIES THERE.</p>
+                   
+                  
+                </div>
+                <div class="card-body ">
+                    <h5 class="card-title ">Take the next step toward your personal life and book your home now
+                    </h5>
+                </div>
+            </div>
+        </div>
+      
+    <div class="col-md-4 col-lg-4 card2">
+            <div class="card">
+                <img src="{% static 'images/housecontact.jpg'%}" alt=" " class="card-img-top">
+                <div class="layer2">
+                   
+                   <p class="text-center txt">It's time to start investing in yourself.</p>
+                </div>
+                <div class="card-body ">
+                    <h5 class="card-title ">Push yourself because, no one else is going to do it for you.</h5>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>
+<!--section3-->
+<div class="container-fluid con1">
+<div class="row bg-dark row2">
+    <div class="col-md-5 mx-auto text-white col3 mt-5 mb-5">
+     <form method="POST" class="ml-2 mr-2 mt-3 mb-3 form">
+         {% csrf_token %}
+         <!-- <img src="{% static 'images/land.jpg' %}" alt="" class="image1"> -->
+         <h1 class="text-center mt-2 mb-2 ">GET IN TOUCH</h1>
+         <div class="form-group">
+             <label for="">Name*</label>
+             <input type="text" placeholder="enter your name" class="form-control" name="name">
+         </div>
+
+        <div class="form-group">
+            <label for="">Email*</label>
+            <input type="email" placeholder="enter your  email" class="form-control" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="">Contact number</label>
+            <input type="text" placeholder="enter contact" class="form-control" name="contact_number">
+        </div>
+
+        <div class="form-group">
+            <label for="">Message*</label>
+            <textarea class="form-control " cols="50" rows="9" placeholder="enter message" name="message"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-light text-dark button1" value="Send Message">
+       
+     </form>
+    </div>
+</div>
+</div>
+
+<!--section4-->
+<div class="row row3 mb-4">
+    <div class="col-md-4 col-lg-4 col-sm-12 col-12">
+        <div class="ml-5">
+        <h3 class="txt1 text-center">FIND US</h3>
+        <div class="help mt-5">
+            <h5 class="ml-3 mt-1 font-weight-bold">OWNER CONTACT CENTER</h5><br>
+            <p class="ml-3">+91 9241333666</p>
+            <p class="ml-3">support@rentalhouse.com</p>
+        </div>
+
+        <div class="help1 mt-5">
+            <h5 class="ml-3 mt-1 font-weight-bold">FOR ANY ENQUIRY</h5><br>
+            <p class="ml-3">contact@rentalhouse.com</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-8 col-lg-8 col-sm-12 col-12 colif">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.056283563222!2d76.69247711447967!3d30.71681808164266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fee5a42944be3%3A0xb713d3a3e26a89c1!2sSachTech%20Solution%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1583935277084!5m2!1sen!2sin" width="860" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+</div>
+
+  <!-- Footer -->
+    
+   <footer class="footer container-fluid text-white">
+    <div class="upper-footer">
+        <div class="row">
+            
+            <div class="col-md-3 mx-auto mt-4">
+                <p class="font-weight-bold">ABOUT</p>
+                <p><a>News</a></p>
+                <p><a>Impact</a></p>
+                <p><a>Our team</a></p>
+                <p><a>Our leadership</a></p>
+                <p><a>Careers</a></p>
+                <p><a>Internship</a></p>
+            </div>
+            <div class="col-md-3 mt-4">
+                <p class="font-weight-bold">CONTACT US</p>
+                <p><span class="font-weight-bold">Address :</span> Hath of it fly signs bear be one blessed after</p>
+                <p><a>Help center</a></p>
+                <p><a>Share your story</a></p>
+
+                <p><a><span class="font-weight-bold">Phone :</span> 600540987</a></p>
+                <p><a><span class="font-weight-bold">Email :</span>info@learning.com </a></p>
+            </div>
+            <div class="col-md-3 mx-auto mt-4">
+                <p>If we wait until we are ready , we will be waiting for the rest of our lives.</p>
+                <img src="{% static 'bbybk.jpg'%}" alt="" class="img-fluid d-block imgb mb-2 rounded-circle ml-3">
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="icons">
+        <div class="row">
+            <div class="col-md-6 list mx-auto">
+                <ul>
+                    <li>Terms of use</li>
+                    <li class="ml-5">Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="lower-footer text-center">
+        <img src="{% static 'aca.jpg'%}" class="imgf">
+        Copyright @E-Learning All rights reserved
+    </div> 
+    <div class="row bg-light">
+        <div class="col-md-12">
+            <h2 class="text-center text-dark">Previous Feedback</h2>
+            <h6 class="text-center text-dark">Total:{{messages|length}}</h6>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Conact Number</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                    </tr>
+                    <tbody>
+                        {% for msg in messages %}
+                        <tr>
+                            <td>{{msg.id}}</td>
+                            <td>{{msg.name}}</td>
+                            <td>{{msg.contact_number}}</td>
+                            <td>{{msg.email}}</td>
+                            <td>{{msg.message}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+    {% if status %}
+    <script>
+       alert("{{status}}");
+    </script>
+    {% endif %}
+    {% endblock %}
+</footer>
+</div>

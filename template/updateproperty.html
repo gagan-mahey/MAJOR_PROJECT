@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block myblock %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="background: url('/static/images/background7.jpg'); height: 180px; background-size: 100% 100%;">
+            <h1 style="color: white; margin-top: 55px; text-align: center;">My Property &gt; Edit Property</h1>
+        </div>
+    </div>
+    
+        <div class="row mt-5 pt-3 pb-3">
+            <div class="col-md-4">
+            <div class="div1 bg-primary text-center">
+                <p>{{user.first_name}} {{user.last_name}}</p>
+           </div>
+           <div class="div2 text-center">
+                <img src="/media/{{data.profile_image}}" class="img">
+           </div>
+           <div class="bg-light my-4">
+           <h2>Manage Account</h2>
+
+    <li>
+       <a href="{% url 'dashboard' %}"><i class="fa fa-user"></i> My Profile</a>
+    </li>
+    {% if user.is_staff %}
+    <li>
+       <a href="{% url 'favourite' %}"><i class="fa fa-heart"></i> Favourite Properties</a>
+    </li>
+    <li>
+       <a href="{% url 'addproperty' %}"><i class="fa fa-plus"></i> Submit New Property</a>
+    </li>
+    <li>
+       <a href="{% url 'myproperty' %}"><i class="fa fa-file-archive"></i>My properties</a>
+    </li>
+    {% endif %}
+    <li>
+        <a href="{% url 'editprofile' %}">Edit profile</a>
+    </li>
+    <li>
+       <a href="{% url 'changepassword' %}"><i class="fa fa-lock"></i> Change Password</a>
+    </li>
+    <li>
+       <a href="{% url 'user_logout' %}"><i class="fa fa-power-off"></i> Log out</a>
+    </li>
+            </div>
+            </div>
+        <div class="col-md-6 mx-auto bg-light my-4">
+            <div><h4 class="text-center">Update your Property here!</h4></div>
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="text-center">
+                <img src="/media/{{property.property_image}}" style="height: 140px; width: 45%;">
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Property Image</label>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                    <input type="file" class="form-control" name="pimg">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Property Name</label>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <input type="text"  name="pname" class="form-control" value="{{property.property_name}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Property category</label>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <select name="pcat" class="form-control">
+                            {% for i in category %}
+                               {% if i.id == property.property_category.id %}
+                               <option value="{{i.id}}" selected>{{i.cat_name}}</option>
+                               {% else %}
+                               <option value="{{i.id}}">{{i.cat_name}}</option>
+                               {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Property Price</label>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <input type="text" placeholder="Product Price" name="pp" class="form-control" value="{{property.property_price}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Sale Price</label>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <input type="text" placeholder="sale Price" name="sp" class="form-control" value="{{property.sale_price}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Property details</label>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <textarea name="des" rows="5" placeholder="property details" class="form-control">{{property.details}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-warning" value="Save changes">
+                </div>
+            </div>
+            </form>
+        </div>
+    
+</div>
+{% if status %}
+<script>
+    alert("{{status}}")
+</script>
+{% endif %}  
+{% endblock %}

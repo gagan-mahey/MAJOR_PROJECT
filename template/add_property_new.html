@@ -1,0 +1,145 @@
+{%extends "base.html"%}
+
+{%load static %}
+{% load bootstrap4 %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    
+    <script src="https://kit.fontawesome.com/f7a6829b89.js" crossorigin="anonymous"></script>
+    {% block head %}
+    <style>
+        #img{
+            background-image: url('{% static "images/background10.jpg"%}');
+            height: 300px;
+            background-attachment: fixed;
+            margin-top: -2%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body,html{
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            width:100% ;
+        }
+        .h1{
+            height: 1px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .col4{
+    background: white;
+    margin-top: -1%!important;
+    line-height: 40px!important;
+   
+       }
+    .col4 h2{
+    text-decoration: underline double black ;
+    }
+    .col4 a{
+    color: black!important;
+   }
+   .div1,.div2{
+       height: 130px;
+   }
+   .div1 p{
+       display: none;
+   }
+   .img{
+       margin-top: -24%!important;
+       border: 4px solid gray;
+       height: 170px;
+   }
+.div2,.col2
+{
+    background: white;
+}
+       
+      
+
+/*for responsiveness*/
+@media (min-width:320px) and (max-width:1199px){
+    .form1 input{
+        width:140%!important;
+    }
+    
+}
+@media (min-width:320px) and (max-width:991px){
+    .group2{
+        margin-left: 11%;
+    }
+    .group1{
+        margin-left: 11%;
+    }
+    
+}
+@media (min-width:320px) and (max-width:767px){
+    .col2{
+        margin-top: 5%!important;
+    }
+    
+}
+@media (min-width:320px) and (max-width:365px){
+   .form1 input{
+        width:120%!important;
+    }
+}
+    </style>
+
+{% endblock %}
+</head>
+<body>
+    {% block myblock %}
+    <div class="container-fluid">
+        <div class="row" id="img">
+            <div class="col-md-12">
+                <h1 style="color:whitesmoke; font:bold; font-family:cursive; margin-top: 120px;text-align: center; ">Add Property</h1>
+                <h5 style="color:whitesmoke; font: bold; font-size: 30px; font-family: cursive; text-align: center; ">Home>Add Property</h5>
+            </div>
+        </div>
+        <div class="row">
+    
+            <div class="col-md-3 col-lg-3  col4 mt-3 ml-3 mt-5">
+                <div class="div1 bg-primary text-center">
+                    <p>{{user.first_name}} {{user.last_name}}</p>
+               </div>
+               <div class="div2 col 4 text-center">
+                    <img src="/media/{{data.profile_image}}" class="img">
+               </div>
+               
+                <h2 class="col4">Manage Account</h2>
+                <a href="{% url 'dashboard' %}" ><i class="fa fa-user-circle" aria-hidden="true"></i>   My Profile</a><br>
+                <a href="{% url 'favourite' %}" ><i class="fa fa-heart" aria-hidden="true"></i>    Favourite Properties</a><br>
+                <a href="{% url 'addproperty' %}" ><i class="fa fa-plus-square-o" aria-hidden="true"></i>    Submit New Property</a><br>
+                <a href="{% url 'myproperty' %}"><i class="fa fa-file-image-o" aria-hidden="true"></i>   My Properties</a><br>
+                <a href="{% url 'editprofile' %}">Edit Profile</a><br>
+                <a href="{% url 'changepassword' %}"><i class="fa fa-lock" aria-hidden="true"></i>    Change Password</a><br>
+                <a href="{% url 'user_logout' %}">Logout</a>
+               
+            </div>
+            <div class="col-md-5 mx-auto">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <input type="submit" class="btn btn-success" value="Add Property">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% if status %}
+    <script>
+        alert("{{status}}")
+        window.location = "/dashboard"
+    </script>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

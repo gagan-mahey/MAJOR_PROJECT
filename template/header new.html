@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <!-- <link rel="stylesheet" href="fontawesome/css/all.css"> -->
+    <link rel="stylesheet" href="{% static 'bootstrap/js/bootstrap.min.js'%}">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'header new.css' %}">
+    
+   
+    
+</head>
+<body>
+    
+    <!--menubar-->
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="navbar navbar-expand-sm navbar-dark  fixed-top text-uppercase" style="background: black;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="" class="navbar-brand">
+                                <img src="{% static 'sam1.png'%}" class="imgback" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                            <button class="navbar-toggler" data-target="#navb" data-toggle="collapse">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                
+                            <div class="collapse navbar-collapse" id="navb">
+                                <ul class="mx-auto navbar-nav">
+                                    <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                                    <li class="nav-item"><a href="" class="nav-link">About us</a></li>
+                                    <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
+                                    <li class="nav-item"><a href="" class="nav-link">All properties</a></li>
+                                    <li class="nav-item"><a href="" class="nav-link">Property detail</a></li>
+                                </ul>
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item"><form class="form-inline">
+                                        <div class="form-group form1">
+                                            <i class="fas fa-search icon1" style="color: white;" aria-hidden="true"></i>
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                    </form></li>
+                                    
+                                    <li class="nav-item"><a class="btn bg-light text-dark ml-3 button1"  href="{% url 'user_login' %}">Login</a></li>
+                                    <li class="nav-item"><a class="btn bg-light text-dark ml-2 button1"  href="{% url 'register' %}">Sign Up</a></li>
+                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--modal code-->
+        <div class="modal fade" id="modal1">
+            <div class="modal-dialog modal-lg ">
+                <div class="modal-content">
+                    <div>
+                    <button class="close text-right" data-dismiss="modal">
+                        <span style="margin-right:24px;">&times;</span>
+                    </button>
+                    </div>
+                     <!-- <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div> -->
+                    <!-- <div class="alert alert-danger show fade alert-dismissble">
+                        <button class="close" data-dismiss="alert">
+                        <span >&times;</span></button>
+                    </div> -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                 
+                                <!--signUp col-->
+                                <div class="col-md-6 mt-2 mb-4">
+                                    <h3>Welcome Back ! <br>
+                                        Please Sign in now</h3>
+                                    <form action="" class="mb-3 mt-3">
+                                        <!-- <h1 style="margin-top: 30px;margin-bottom: 30px;font-family: 'Roboto Slab', serif;" class="text-center">Portal Login</h1> -->
+                                       <div>
+                                           <input type="text" name="" class="form-control text-center" value="" placeholder="username">
+                                           <span><i class="far fa-id-badge u" style="margin-top: -28px; margin-left: 9px;position: absolute;"></i></span>
+                                       </div>
+                                       <div>
+                                           <input type="password" id="new_pass" class="form-control text-center mt-5" value="" placeholder="password">
+                                           <span><i class="fas fa-key u" style="position: absolute; margin-top: -27px; margin-left: 9px;"></i></span>
+                                           <span style="float: right;margin-top: -32px;margin-left: 302px;position: absolute;color: darkgray;text-decoration: underline;cursor: pointer;"id="show">Show</span>
+                                           <input type="checkbox" style="color:gray;">Remember me
+                                           <div style="float:right;color: gray;text-decoration-line: underline;cursor: pointer;" id="need">Need help?</div>
+                                             <div id="passw" style="margin-left: 223px;;display:none" class="text-danger">Forget Password?</div> 
+                                            <div id="username" style="margin-left: 223px;display:none" class="text-danger">Forget Username?</div>
+                                       </div>
+                                       <div>
+                                           
+                                        <!-- <input type="submit" style="font-family: 'Nova Square', cursive" class="form-control btn btn-dark d-block mx-auto mt-5 mb-5" value="Login" id=""> -->
+                                           
+                                        <button  class=" btn form-control mt-3 mb-3 ">Login</button>
+    
+                                        </div>
+                                       <span class="mb-5 text-center" style="font-family: 'Playfair Display', serif">New to Evernest?<a href="E:\project_HOUSE RENTAL\signup.html" target="_blank">SignUp</a></span>
+                                   </form>
+                                </div>
+                                <!--end of signUp col -->
+                                <div class="col-md-6 mx-auto bg-dark text-light mb-4 mt-4" style="font-family: 'Playfair Display', serif">
+                                    <h2 class="text-center">Login to account to unlock these benefits</h2>
+                                    <ul class="mt-3 font-weight-bold"> 
+                                        <li>Get latest updates about Properties and Projects.</li>
+                                        <li>Access millions of advertiser details in one click.</li>
+                                        <li>Get market information, reports and price trends.</li>
+                                        <li>Advertise your property for free!</li>
+                                    </ul>
+                                    <img src="{% static 'housing.jpg'%}" class="img-fluid">
+                                </div>
+    
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of signin modal-->
+        <!--sign up modal-->
+       
+    <div class="modal fade" id="modal2">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div>
+                    <button class="close text-right" data-dismiss="modal">
+                        <span style="margin-right:24px;">&times;</span>
+                    </button>
+                    </div>
+                <!-- <div class="modal-header">
+                    <h1 class="text-light mx-auto"></h1>
+                    
+                </div> -->
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <!--signUp col-->
+                            <div class="col-md-6 mt-2 mb-4">
+                                <form>
+                                    <div class="form-row" style="font-family: 'Playfair Display', serif">I am
+                                        <div class="col-md-12 mb-2">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                     <label class="form-check-label" for="inlineRadio1">Buyer/Owner</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                     <label class="form-check-label" for="inlineRadio1">Agent</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                     <label class="form-check-label" for="inlineRadio1">Builder</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="First name">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Last name">
+                                        </div>
+                                        <input type="text" class="form-control mt-2" placeholder="Enter username">
+                                        <span><i class="fas fa-user" style="margin-left: 327px;margin-top: -31px;float:right;font-size:larger;"></i></span>
+                                        
+                                        <input type="email" class="form-control mt-2" placeholder=" Enter your valid email">
+                                        <span><i class="fas fa-envelope" style="position: absolute;margin-left: -36px;font-size:larger;margin-top: 15px;"></i></span>
+ <input type="password" class="form-control mt-2" placeholder="password" id="pass" data-toggle="popover" onfocus="$('.pwdHints').show();" onblur="$('.pwdHints').hide();">
+    <div class="pwdHints" style="display: none;">
+    <div class="pwdHintsHead">Password Rules</div>
+    <ul>
+    <li class="pwdHintsItem" id="pwdCharChk">Length must be between 8 to 14 characters.</li>
+    <li class="pwdHintsItem" id="pwdNumChk">Must have at least 1 digit.</li>
+    <li class="pwdHintsItem" id="pwdSpclChk">Must have at least 1 special character.</li>
+    <li class="pwdHintsItem" id="pwdCapChk">Must have at least 1 alphabet.</li>
+    <li class="pwdHintsItem" id="pwdWhtChk">Allowed special characters are !@#$%^&amp;*_.</li>
+    </ul>
+    </div><span><i class="fas fa-eye-slash pass" id="ic" onclick="myfun()" style="position: absolute;margin-left: -38px;font-size:larger;margin-top: 14px;"></i></span>
+                                         
+                                        <input type="password" class="form-control mt-2" placeholder="Confirm password"><span><i class="fas fa-eye-slash pass" id="ic" onclick="myfun()" style="position: absolute;margin-left: -38px;font-size:larger;margin-top: 14px;"></i></span>
+                                        <p class="text-center mt-2  p-2" style="font-size: smaller;">By clicking below, you agree to company's T & C</p>
+                                        <button type="submit" class="btn form-control mt-3 mb-3">SignUp</button>
+                                    </div>
+                                    <p style="font-family: 'Playfair Display', serif">Already member?<a href="E:\project_HOUSE RENTAL\loginpage.html" target="_blank">LogIn</a></p>
+                                </form>
+                                <hr>
+                                <div>
+                                    <h5>or connect with</h5>
+                                    <button class=" form-control btn-dark text-center">Apple</button>
+                                    <button class=" form-control btn-info mt-2 text-center">Facebook</button>
+                                    <buttonclass=" form-control btn-success mt-2 text-center">Google</button>
+                                </div>
+                            </div>
+                        
+                            <!--end of signUp col -->
+                            <div class="col-md-6 mx-auto bg-dark text-light mt-2 mb-4" style="font-family: 'Playfair Display', serif" >
+                                <h3 class="text-center">Create an account to unlock these benefits</h3>
+                                <ul class="mt-3"> 
+                                    <li>Get latest updates about Properties and Projects.</li>
+                                    <li>Access millions of advertiser details in one click.</li>
+                                    <li>Get market information, reports and price trends.</li>
+                                    <li>Advertise your property for free!</li>
+                                </ul>
+                                <img src="{% static 'housing.jpg'%}" class="img-fluid mt-3 ">
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+              
+  <!--end of signup modal--> 
+  <script>
+    $(function(){
+        $('#passw').hide();
+        $('#username').hide();
+        $("#need").click(function(){
+            $('#passw').toggle();
+            $('#username').toggle();
+        //  $("#box2").fadeToggle(1000);
+        //  $("#read").fadeTo(2000,0.15,function(){
+        //      $("#read").fadeTo(2000,1);
+          })   
+        })
+        $(function(){
+            $('#show').click(function(){
+                var x =document.getElementById('new_pass');
+                var f = document.getElementById('ic');
+                if(x.type=="password"){
+                    x.type="text";
+                    $('#show').html("Hide");
+                }
+                else{
+                    x.type="password";
+                    $('#show').html("Show");
+                }
+            })
+
+        })
+    </script>
+
+
+
+     {% block myblock %}
+
+
+     
+     {% endblock %}
+
+    <!--footer-->
+
+    
+    
+    
+    
+    <footer class="footer container-fluid text-white footer1 ">
+        <div class="upper-footer mt-5">
+            <div class="row">
+                
+                <div class="col-md-3 mx-auto mt-4">
+                    <p class="font-weight-bold">EVRENEST</p>
+                    <p><a>HOME</a></p>
+                    <p><a>ABOUT US</a></p>
+                    <p><a>CONTACT US</a></p>
+                    <p><a>ALL PROPERTIES</a></p>
+                    <p><a>PROPERTY DETAILS</a></p>
+                   
+                </div>
+                <div class="col-md-3 mt-4">
+                    <p class="font-weight-bold">CONTACT US</p>
+                    <p><span class="font-weight-bold">Address :</span> Hath of it fly signs bear be one blessed after</p>
+                    <p><a>Help center</a></p>
+                    <p><a>Visit property</a></p>
+
+                    <p><a><span class="font-weight-bold">Phone : </span> 8753739203</a></p>
+                    <p><a><span class="font-weight-bold">Email : </span>evernest@yahoo.com </a></p>
+                </div>
+                <div class="col-md-3 mx-auto mt-4">
+                    <p>If we wait until we are ready , we will be waiting for the rest of our lives.</p>
+                    <img src="house management2.jpg" alt="" class="img-fluid d-block imgb mb-2 rounded-circle ml-3">
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="icons">
+            <div class="row">
+                <div class="col-md-6 list mx-auto">
+                    <ul>
+                        <li>Terms of use</li>
+                        <li class="ml-5">Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="lower-footer text-center">
+            <img src="home.jpg" class="imgf">
+            Copyright @Evernest  All rights reserved
+        </div>
+    </footer>
+  
+</div>

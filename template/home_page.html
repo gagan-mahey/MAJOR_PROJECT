@@ -1,0 +1,439 @@
+{% extends "base.html" %}
+
+{%load static %}
+
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home_page.css' %}">
+</head>
+<body>
+  
+        
+        {% block myblock %}
+        <!--section1-->
+        <div class="row" style="background:url('/static/images/background7.jpg')">
+            <div class="col-md-8" style="margin-left: 400px;margin-bottom: 50px;">
+                <form action="{% url 'all_properties' %}">
+                <div class="row p-5">
+                    <div class="col-md-6">
+                        <input type="text" name="qry" placeholder="Search by property name or category" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" value="Search" class="btn btn-success">
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="carousel slide" data-ride="carousel" id="abc">
+
+                    
+                    <ul class="carousel-indicators">
+                        <li data-target=#abc data-slide-to="0"></li>
+                        <li data-target=#abc data-slide-to="1"></li>
+                        <li data-target=#abc data-slide-to="2"></li>
+                        
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/bg.png'%}" class="img-responsive img1"> 
+                        </div>
+                    
+                        <div class="carousel-item">
+                            <img src="{% static 'images/homeone.jpg'%}" class="img-responsive img1"> 
+                        </div>
+                  
+                   
+                        <div class="carousel-item">
+                            <img src="{% static 'images/homefive.jpg'%}" class="img-responsive img1"> 
+                        </div>
+                        <a href="#abc" class="carousel-control-prev" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                       <a href="#abc" class="carousel-control-next" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            </a>
+                   
+                </div>
+            </div>
+        </div><hr>
+        
+        <!--section2-->
+        <div class="row mt-5 mx-auto">
+            <h1 class="feature">FEATURED PROPERTIES</h1>
+        </div>
+    </div>
+
+    <div class="content ">
+        <h1 class="text-center mt-2">Why to choose this?</h1>
+        <div class="container ">
+            <div class="row mt-5">
+                <div class="col-md-4 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/housecontact.jpg'%}" alt="" class="card-img-top rounded">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">Best property</h4>
+                            <p class="card-text">You will get best property here. The property is legal . You will get any kind of property in affordable price.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/housecontact.jpg'%}" alt="" class="card-img-top rounded">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">Good facilities</h4>
+                            <p class="card-text">You will get all the good facilties provided hereby. You don't have to pay extra for the good facilties that we offer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/housecontact.jpg'%}" alt="" class="card-img-top rounded">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">Provide all accomodations</h4>
+                            <p class="card-text">All the other accomodations will be provided to you in the affordable price.No need to pay extra for it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><hr>
+    
+
+    
+
+    
+    <!--extra section-->
+    <div class="row">
+        <div class="col-md-12 back2">
+
+        </div>
+    </div>
+
+    
+
+
+<!--section-4-->
+    <div class="container-fluid sec1 mt-3">
+        <div class="container bg-light">
+            <div class="row mt-5">
+                <div class="col-md-4 col-lg-4 col-sm-4 mt-5 mb-5 sec2">
+                    <div class="box">
+                   <div class="img-box"> 
+                   <img src="{% static 'images/homethree.jpg'%}" alt="" class="img-responsive img5 rounded"> 
+                </div>
+                   <div class="details">
+                       <div class="content">
+                       <h4>PROPERTY FOR RENT</h4>
+                       <p>You will get best property here. The property is legal . You will get any kind of property in affordable price.</p>
+                       </div> 
+                   </div>
+                </div>
+            </div>
+                <div class="col-md-4 col-lg-4 col-sm-4 mt-5 mb-5 sec3">
+                    <div class="box1">
+                    <div class="img-box1">
+                    <img src="{% static 'images/hometwo.jpg'%}" alt="" class="img-responsive img6 rounded">
+                </div> 
+                <div class="details1">
+                    <div class="content1">
+                        <h4>ROOM FOR RENT</h4>
+                        <p>You will get best property here. The property is legal . You will get any kind of property in affordable price.
+                        </p>   
+                    </div>
+                </div>
+                </div>
+            </div>
+                <div class="col-md-4 col-lg-4 col-sm-4 mt-5 mb-5 sec4">
+                    <div class="box2">
+                    <div class="img-box2">
+                    <img src="{%static 'images/homeseven.jpg'%}" alt="" class="img-responsive img7 rounded"> 
+                </div>
+               <div class="details2">
+                   <div class="content2">
+                    <h4>PROPERTY FOR OFFICE </h4>
+                       <p>If you need office space for your  you can get proper office space with good facilities.</p>
+                   </div>
+               </div>
+            </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div><br><br>
+    <hr>
+
+    <!--extra section-->
+
+    <div class="row">
+        <div class="col-md-12 back1">
+
+        </div>
+    </div>
+
+
+
+
+    <!--section -5-->
+
+    <div class="content mt-5 ">
+        <h1 class="text1">WHAT ARE YOU LOOKING FOR?</h1>
+        <div class="container ">
+            <div class="row mt-5">
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/homeseven.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">HOME</h4>
+                            <p class="card-text">You can book your home for rent and buy also.All facilities are provided with full A.C rooms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/land.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">LAND</h4>
+                            <p class="card-text">You can buy a land to do any kind of work . You can book your land that you want to take on rent </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/office.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">OFFICE</h4>
+                            <p class="card-text">If you need office space for your  you can get proper office space with good facilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/business1.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">BUSINESS</h4>
+                            <p class="card-text">For starting any kind of business you need a good property.You will get proper property here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><hr>
+
+    <!--section-7-->
+    
+    <div class="content mt-5 ">
+        <h1 class="text1">PROPERTY DETAILS</h1>
+        <div class="container ">
+            <div class="row mt-5">
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/property.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">PAYMENT BOOKING</h4>
+                            <p class="card-text">If user is interested in buying property and for rent he can pay online payment and book his property</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/home deal.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">PAYMENT GUARENTEE</h4>
+                            <p class="card-text">User when paid online will have payment gurantee for his payment as he will get approval from the owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/house management2.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">HOUSE MANAGEMENT</h4>
+                            <p class="card-text">A proper management is important for a user. You will be provided with proper house management system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center">
+                    <div class="card">
+                        <img src="{% static 'images/rent.jpg'%}" alt="" class="card-img-top rounded land">
+                        <div class="card-body bg-light">
+                            <h4 class="card-title">PROPERTY DEAL</h4>
+                            <p class="card-text">You can see all property details in our website.Your can deal for a property online by paying some amount to the owner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><hr>
+    
+    
+    
+    <!--section-8-->
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h1 class="about-owner">ABOUT OWNER</h1>
+                <div class="col-md-4 mt-5">
+                    <img src="{% static 'images/formal2.jpg'%}"  class="owner">
+                </div>
+            </div>
+            
+                <div class="col-md-8 mt-5">
+                   <p class="textowner">I AM RAJINDER KUMAR FROM CHANDIGARH . I HAVE DIFFERENT PROPERTIES IN DIFFERENT AREAS FOR RENT .THESE PROPERTIES ARE LEGAL .I HAVE PROPERTIES IN DIFFERENT PARTS OF CHANDIGARH. I M DOING THIS BUSINESS FROM LAST 7 YEARS.</p>
+                   <h5 class="queries">FOR ANY QUERIES: CONTACT : <h5>
+                    <p><a><span class="queries">Phone : </span> 8753739203</a></p>
+                    <p><a><span class="queries">Email : </span>evernest@yahoo.com </a></p>
+                </div>
+            
+        </div>
+    </div><br>
+    <hr>
+    
+    <!--section-feedback-->
+    <div class="container-fluid">
+        <div class="row bg-light mt-4">
+            <div class="col-md-12 bg-light">
+             <h3 class="text-center text-dark mt-5 fed">CLIENTS FEEDBACK</h3>
+             <div class="carousel slide" data-ride="carousel">
+                 <div class="carousel-inner">
+                     <div class="carousel-item active mt-5 mb-5">
+                         <div class="txt1 mt-5">
+                       <p>The best service i get till now . Owner is very cooerative . The price of property is very affordable . I had stayed for rent for more than 5 years and it was good experience.</p>
+                        </div>
+                       
+                        <div class="txt2 mt-5">
+                            <p >I have taken office space for starting my new bussiness. The property was good and has a affordable price also .I advice you to visit oce to their prperty .</p>
+                             </div>
+                             <div class="img2">
+                                <img src="{% static 'images/formal5.jpg'%}" class="img2">
+                                <p class="para text text-center">RAJESH KUMAR</p>
+                            </div>
+                <div class="img3">
+                    <img src="{% static 'images/formal7.jpg'%}" class="img2">
+                    <p class="para text-center">AKSHAY SHARMA</p>
+                </div>
+                     </div>
+                     
+                     <div class="carousel-item mt-5 mb-5">
+                        <div class="txt1 mt-5">
+                            <p >The best service i get till now . Owner is very cooerative . The price of property is very affordable . I had stayed for rent for more than 5 years and it was good experience.</p>
+                             </div>
+                            
+                            
+                             <div class="txt2 mt-5">
+                                 <p >I have taken office space for starting my new bussiness. The property was good and has a affordable price also .I advice you to visit oce to their prperty </p>
+                                  </div>
+                                  <div class="img2">
+                                    <img src="{% static 'images/formal7.jpg'%}" class="img2">
+                                    <p class="para text-center">SURINDER KUMAR</p>
+                                </div>
+                                  <div class="img3">
+                                  <img src="{% static 'images/formal4.jpg'%}" class="img2">
+                                  <p class="para text-center">MANOJ KUMAR</p>
+                                  </div>
+                    </div>
+
+                    <div class="carousel-item mt-5 mb-5">
+                        <div class="txt1 mt-5">
+                            <p >I have taken office space for starting my new bussiness. The property was good and has a affordable price also .I advice you to visit oce to their prperty </p>
+                             </div>
+                            
+                        
+                             <div class="txt2 mt-5">
+                                 <p >The best service i get till now . Owner is very cooerative . The price of property is very affordable . I had stayed for rent for more than 5 years and it was good experience.</p>
+                                  </div>
+                                  <div class="img2">
+                                    <img src="{% static 'images/formal2.jpg'%}" class="img2">
+                                    <p class="para text-center">ADITIYA KUMAR</p>
+                                </div>
+                                  <div class="img3">
+                                  <img src="{%static 'images/formal5.jpg'%}" class="img2">
+                                  <p class="para text-center">VISHAL GUPTA</p>
+                                  </div>
+                    </div>
+                 </div>
+             </div>
+            </div>
+        </div>
+    </div>
+    {% if status %}
+    <script>
+        alert("{{status}}")
+        window.location="/"
+    </script>
+    {% endif %}
+
+     {% endblock %}
+    <!-- footer
+
+    <footer class="footer container-fluid text-white">
+        <div class="upper-footer">
+            <div class="row">
+                
+                <div class="col-md-3 mx-auto mt-4">
+                    <p class="font-weight-bold">EVRENEST</p>
+                    <p><a>HOME</a></p>
+                    <p><a>ABOUT US</a></p>
+                    <p><a>CONTACT US</a></p>
+                    <p><a>ALL PROPERTIES</a></p>
+                    <p><a>PROPERTY DETAILS</a></p>
+                   
+                </div>
+                <div class="col-md-3 mt-4">
+                    <p class="font-weight-bold">CONTACT US</p>
+                    <p><span class="font-weight-bold">Address :</span> Hath of it fly signs bear be one blessed after</p>
+                    <p><a>Help center</a></p>
+                    <p><a>Visit property</a></p>
+
+                    <p><a><span class="font-weight-bold">Phone : </span> 8753739203</a></p>
+                    <p><a><span class="font-weight-bold">Email : </span>evernest@yahoo.com </a></p>
+                </div>
+                <div class="col-md-3 mx-auto mt-4">
+                    <p>If we wait until we are ready , we will be waiting for the rest of our lives.</p>
+                    <img src="{% static 'images/house management2.jpg'%}" alt="" class="img-fluid d-block imgb mb-2 rounded-circle ml-3">
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="icons">
+            <div class="row">
+                <div class="col-md-6 list mx-auto">
+                    <ul>
+                        <li>Terms of use</li>
+                        <li class="ml-5">Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="lower-footer text-center">
+            <img src="{%static 'images/homelogo.jpg'%}" class="imgf">
+            Copyright @Evernest  All rights reserved
+        </div>
+    </footer>
+</div>
+
+
+    
+     -->
+
+
+
+    
+    
+    
+        
+    
+     
+</body>
+</html>
